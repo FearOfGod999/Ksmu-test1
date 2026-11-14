@@ -1,0 +1,21 @@
+{
+  "groups": 242,
+  "schedule_sha256": "9a9c6b9454efae48dc921401f4dd8bf96e9e4fb7c3c94656eddaa2632767a033",
+  "unchanged_schedule": true,
+  "widths": [
+    320,
+    390,
+    768,
+    1280
+  ],
+  "browser_pass": true,
+  "guest_denied": true,
+  "wrong_scope_denied": true,
+  "allowed_role_mock_test": true,
+  "no_client_schedule_mutation": true,
+  "server_node_tests": 8,
+  "integration_tested_on_live_server": false,
+  "pending_qa": [
+    "actual Supabase permissions, role grants, end-to-end staging/publishing, iPhone Safari, source-specific irregular Excel formats"
+  ]
+}

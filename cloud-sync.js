@@ -58,12 +58,19 @@ function cloudRedraw() {
 }
 function cloudSetStatus(value){ cloudStatus=value;cloudUpdateUI(); }
 function cloudUpdateUI(){
+  const profileState=document.getElementById('n-password-state');
+  if(profileState)profileState.textContent=KSMU_ISOLATED_PREVIEW?'Автономная версия: серверный вход отключён. Для авторизации нужна серверная сборка.':cloudSession?.user?.email?'Вход выполнен: '+cloudSession.user.email:'Введите почту и пароль существующей учётной записи редактора.';
+
   const el=document.getElementById('cloudStatus');if(el)el.textContent=cloudStatus;
+  const profileLogout=document.getElementById('n-password-logout');if(profileLogout)profileLogout.hidden=KSMU_ISOLATED_PREVIEW||!cloudSession?.user?.email;
+  const tgButton=document.getElementById('n-auth-login');if(tgButton&&cloudSession?.user?.email)tgButton.hidden=true;
+  const profileName=document.getElementById('n-auth-name'),profileMeta=document.getElementById('n-auth-meta');
+  if(cloudSession?.user?.email){if(profileName)profileName.textContent=cloudSession.user.email;if(profileMeta)profileMeta.textContent=cloudCanAdmin()?'Администратор Supabase':cloudCanEdit()?'Редактор · '+selectedStudyGroup:'Пользователь Supabase';}
   const actor=document.getElementById('cloudAccount');
   if(actor)actor.textContent=cloudSession?.user?.email ? 'Вход администратора: '+cloudSession.user.email : cloudSession?.user?.is_anonymous ? 'Участник без регистрации · записи привязаны к этому браузеру' : 'Чтение без регистрации · при публикации создастся анонимная учётная запись';
   const roles=document.getElementById('cloudRoles');
   if(roles)roles.textContent=cloudCanAdmin()?'Администратор':cloudCanEdit()?'Редактор группы '+selectedStudyGroup:'Любой студент может публиковать ДЗ и модули';
-  const login=document.getElementById('cloudLoginForm');if(login)login.hidden=Boolean(cloudSession?.user?.email);
+  const login=document.getElementById('cloudLoginForm');if(login)login.hidden=KSMU_ISOLATED_PREVIEW||Boolean(cloudSession?.user?.email);
   const logout=document.getElementById('cloudLogout');if(logout)logout.hidden=!cloudSession?.user?.email;
   const publish=document.getElementById('cloudPublishLocal');
   if(publish){publish.disabled=!cloudCanContribute();publish.textContent='Опубликовать локальные ДЗ и модули ('+cloudLocalNotes().length+')';}
@@ -192,7 +199,7 @@ async function cloudLogin(ev){
     if(!j.access_token||!j.refresh_token)throw Error('Сервер не выдал токен');
     cloudSaveSession(j);
     document.getElementById('cloudPassword').value='';
-    await cloudLoadPermissions();await cloudRefreshGroup(true);
+    await cloudLoadPermissions();await cloudRefreshGroup(true);window.dispatchEvent(new Event('ksmu:editor-session-changed'));
     cloudSetStatus(cloudCanEdit()?'Вход выполнен · разрешена публикация':'Вход выполнен · права редактора ещё не назначены');
   }catch(e){cloudSetStatus('Ошибка входа: '+e.message);}
 }
@@ -203,7 +210,7 @@ async function cloudLogout(){
   cloudAssignments=[];
   try{const s=JSON.parse(localStorage.getItem(CLOUD_VISITOR_KEY)||'null');if(s?.access_token&&s?.refresh_token)cloudSession=s;}catch(_){}
   cloudUpdateUI();
-  cloudSetStatus('Вы вышли из редактора · ДЗ и модули доступны всем');
+  cloudSetStatus('Вы вышли из редактора · ДЗ и модули доступны всем');window.dispatchEvent(new Event('ksmu:editor-session-changed'));
   if(token){fetch(KGMU_CLOUD.url+'/auth/v1/logout',{method:'POST',headers:{'apikey':KGMU_CLOUD.key,'Authorization':'Bearer '+token}}).catch(()=>{});}
 }
 function cloudShouldSaveNote(prev){

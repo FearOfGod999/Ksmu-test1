@@ -1,0 +1,45 @@
+/* KSMU NOVA: ergonomic editor workflow / unobtrusive motion (2026-11) */
+:root{--ks-flow-ease:cubic-bezier(.22,1,.36,1)}
+.ks-year-field{display:flex;align-items:center;border:1px solid var(--n-line);background:var(--n-surface);border-radius:13px;overflow:hidden;min-height:46px;transition:border-color .22s,box-shadow .22s}
+.ks-year-field:focus-within{border-color:var(--n-accent);box-shadow:0 0 0 3px var(--n-accentsoft)}
+.ks-year-field input{width:100%;min-width:0;flex:1;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;text-align:center!important;font-size:15px!important;font-weight:800!important;font-variant-numeric:tabular-nums;padding:9px 4px 9px 10px!important;color:var(--n-ink)!important}
+.ks-year-field input[aria-invalid="true"]{color:#c0443e!important}
+.ks-year-next{min-width:47px;display:flex;align-items:center;justify-content:center;color:var(--n-mutedstrong);font-size:13px;font-weight:800;padding:0 9px;border-left:1px solid var(--n-line)}
+#n-import-year-help{font-size:10px;line-height:1.4;font-weight:500}
+.ks-editor-state{display:flex;align-items:center;gap:12px;min-width:0;background:var(--n-sky);border:1px solid var(--n-line);padding:13px 14px;margin:0 0 22px;border-radius:16px;transition:background .3s,border-color .3s;}
+.ks-editor-state>div{flex:1;min-width:0;display:grid;gap:3px}
+.ks-editor-state b{font-size:12px;color:var(--n-ink);font-weight:850}
+.ks-editor-state small{font-size:11px;color:var(--n-mutedstrong);line-height:1.5}
+.ks-editor-dot{width:9px;height:9px;border-radius:50%;background:#d29a62;flex:none;box-shadow:0 0 0 5px color-mix(in srgb,#d29a62 14%,transparent)}
+.ks-editor-state[data-level="authorized"]{border-color:color-mix(in srgb,#36a486 28%,var(--n-line));background:color-mix(in srgb,#36a486 5%,var(--n-panel))}
+.ks-editor-state[data-level="authorized"] .ks-editor-dot{background:#36a486;box-shadow:0 0 0 5px color-mix(in srgb,#36a486 14%,transparent)}
+.ks-editor-state[data-level="offline"] .ks-editor-dot,.ks-editor-state[data-level="guest"] .ks-editor-dot{background:#a28b78;box-shadow:none}
+.ks-editor-go{flex:none;display:inline-flex;align-items:center;justify-content:center;min-height:38px;max-width:110px;padding:8px 12px;border:1px solid var(--n-line);background:var(--n-panel);border-radius:12px;color:var(--n-accent);font-size:11px;font-weight:800;text-align:center;transition:transform .2s var(--ks-flow-ease),box-shadow .2s}
+.ks-editor-go:hover{box-shadow:0 5px 16px rgba(25,25,35,.08);transform:translateY(-1px)}
+.ks-import-filter{display:flex;gap:10px;align-items:end;justify-content:space-between;padding:10px 0;margin:4px 0 7px;min-width:0}
+.ks-import-filter[hidden]{display:none!important}
+.ks-import-filter label{display:grid;gap:5px;min-width:0;flex:1;color:var(--n-mutedstrong);font-size:11px;font-weight:800}
+.ks-import-filter input{min-height:41px;border:1px solid var(--n-line);border-radius:12px;background:var(--n-panel);color:var(--n-ink);padding:10px 12px;min-width:0;width:100%;font:inherit;font-weight:550;transition:border-color .2s,box-shadow .2s}
+.ks-import-filter input:focus{outline:none;border-color:var(--n-accent);box-shadow:0 0 0 3px var(--n-accentsoft)}
+.ks-filter-count{flex:none;align-self:end;min-height:41px;display:grid;place-items:center;color:var(--n-mutedstrong);font-weight:750;font-size:11px;white-space:nowrap}
+.ks-import-table tbody tr[hidden]{display:none!important}
+/* Center titles and icons, keep navigation labels intentionally left aligned for scanability. */
+:is(.n-primary,.n-secondary,.ks-import-template,.n-icon-button,.n-menu-button,.n-drawer-close,.n-week-control,.n-quick-button,.n-day,.n-course,.n-group-pick){display:inline-flex;align-items:center;justify-content:center;text-align:center;gap:8px}
+:is(.n-primary,.n-secondary,.ks-import-template,.n-day,.n-course,.n-group-pick)>svg{flex:none;align-self:center}
+.n-side .n-nav{justify-content:flex-start;text-align:left}
+.n-extra-page{animation:ks-page-enter .34s var(--ks-flow-ease) both}
+@keyframes ks-page-enter{from{opacity:.83;transform:translateY(7px)}to{opacity:1;transform:none}}
+.n-resource,.n-contact-card,.ks-import-semester,.ks-import-approval{transition:transform .28s var(--ks-flow-ease),box-shadow .28s,border-color .28s}
+@media(hover:hover){.n-resource:hover,.n-contact-card:hover{transform:translateY(-3px);box-shadow:0 16px 28px rgba(33,33,44,.06)}.ks-import-semester:hover,.ks-import-approval:hover{border-color:color-mix(in srgb,var(--n-accent) 24%,var(--n-line))}}
+.n-import-actions button:disabled{opacity:.52;filter:grayscale(.15);cursor:not-allowed}
+.n-import-actions button:not(:disabled):active,.ks-import-template:active{transform:scale(.98)}
+@media(max-width:560px){.ks-editor-state{flex-wrap:wrap}.ks-editor-go{margin-left:21px}.ks-import-filter{align-items:stretch;flex-direction:column}.ks-filter-count{align-self:flex-end;min-height:18px}}
+@media(prefers-reduced-motion:reduce){.n-extra-page{animation:none!important}.ks-editor-state,.ks-editor-go,.n-resource,.n-contact-card,.ks-import-semester,.ks-import-approval{transition:none!important}}
+
+.ks-import-dropzone{display:flex;align-items:center;gap:13px;margin:12px 0;padding:17px;border:1.5px dashed color-mix(in srgb,var(--n-accent) 32%,var(--n-line));border-radius:18px;background:color-mix(in srgb,var(--n-accent) 3%,var(--n-panel));cursor:pointer;transition:transform .24s var(--ks-flow-ease),border-color .2s,background .2s}
+.ks-import-dropzone:hover,.ks-import-dropzone.is-dragging{border-color:var(--n-accent);background:var(--n-accentsoft);transform:translateY(-1px)}
+.ks-upload-symbol{display:grid;place-items:center;width:40px;height:40px;border-radius:13px;background:var(--n-accentsoft);color:var(--n-accent);font-size:25px;font-weight:850;flex:none}
+.ks-import-dropzone>span:last-child{min-width:0;display:grid;gap:4px}
+.ks-import-dropzone b{font-size:13px;color:var(--n-ink)}.ks-import-dropzone small{font-size:10px;line-height:1.55;color:var(--n-mutedstrong)}
+.ks-report-download{white-space:normal;min-width:0;justify-content:center;text-align:center}
+@media(prefers-reduced-motion:reduce){.ks-import-dropzone{transition:none!important}}

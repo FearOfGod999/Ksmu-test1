@@ -1,0 +1,75 @@
+[
+  {
+    "width": 320,
+    "year_before": "2026",
+    "year_after": "2037-2038",
+    "label": "/38",
+    "permitted_guest": false,
+    "no_overflow": true,
+    "editor_status": "Требуется вход редактора\nПросмотр Excel открыт всем, отправка и изменения расписания заблокированы.\nВ профиль",
+    "controls_centered": {
+      "align": "center",
+      "justify": "center"
+    },
+    "errors": []
+  },
+  {
+    "width": 390,
+    "year_before": "2026",
+    "year_after": "2037-2038",
+    "label": "/38",
+    "permitted_guest": false,
+    "no_overflow": true,
+    "editor_status": "Требуется вход редактора\nПросмотр Excel открыт всем, отправка и изменения расписания заблокированы.\nВ профиль",
+    "controls_centered": {
+      "align": "center",
+      "justify": "center"
+    },
+    "original_count": 37,
+    "no_file_error": "Черновик подготовлен\n1 групп · 2 занятий · 1 листов · Осенний 2037/2038\n2\nНовых строк\n0\nИсчезающих строк\n1\nГрупп с данными\nГруппа\tЗаписей\tДобавлено\tИсчезает\n1307\t2\t+2\t−0\nСтруктура проверена. Перед публикацией с",
+    "guest_stage": false,
+    "guest_stage_after_preview": false,
+    "after_preview_count": 37,
+    "bad_year": "",
+    "bad_year_stage_enabled": false,
+    "wrong_scope_stage": false,
+    "allowed_stage": true,
+    "server_post_count": 1,
+    "server_post_meta": {
+      "academic_year": "2026-2027",
+      "semester": "autumn",
+      "change_mode": "full-replace",
+      "confirmed_full_replace": true
+    },
+    "no_data_mutation": true,
+    "errors": []
+  },
+  {
+    "width": 768,
+    "year_before": "2026",
+    "year_after": "2037-2038",
+    "label": "/38",
+    "permitted_guest": false,
+    "no_overflow": true,
+    "editor_status": "Требуется вход редактора\nПросмотр Excel открыт всем, отправка и изменения расписания заблокированы.\nВ профиль",
+    "controls_centered": {
+      "align": "center",
+      "justify": "center"
+    },
+    "errors": []
+  },
+  {
+    "width": 1280,
+    "year_before": "2026",
+    "year_after": "2037-2038",
+    "label": "/38",
+    "permitted_guest": false,
+    "no_overflow": true,
+    "editor_status": "Требуется вход редактора\nПросмотр Excel открыт всем, отправка и изменения расписания заблокированы.\nВ профиль",
+    "controls_centered": {
+      "align": "center",
+      "justify": "center"
+    },
+    "errors": []
+  }
+]

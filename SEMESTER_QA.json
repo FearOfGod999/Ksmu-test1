@@ -1,0 +1,77 @@
+[
+  {
+    "width": 320,
+    "semester_control_visible": true,
+    "year": "2026-2027",
+    "default_period": "2026-2027:autumn",
+    "no_overflow_import": true,
+    "button_text_alignment": {
+      "display": "inline-flex",
+      "align": "center",
+      "justify": "center"
+    },
+    "errors": [],
+    "no_external_requests": true
+  },
+  {
+    "width": 390,
+    "semester_control_visible": true,
+    "year": "2026-2027",
+    "default_period": "2026-2027:autumn",
+    "no_overflow_import": true,
+    "button_text_alignment": {
+      "display": "inline-flex",
+      "align": "center",
+      "justify": "center"
+    },
+    "wrong_semester_blocked": true,
+    "wrong_semester_detected": true,
+    "spring_blocked_before_verify": true,
+    "spring_enabled_after_verify": true,
+    "spring_diff_add": "Черновик подготовлен\n1 групп · 2 занятий · 1 листов · Весенний 2026/2027\n2\nНовых строк\n0\nИсчезающих строк\n1\nГрупп с данными\nГруппа\tЗаписей\tДобавлено\tИсчезает\n1307\t2\t+2\t−0\nСтруктура проверена. Перед публикацией сравните расписание с подписанным документом.\nПоказать примеры занятий из файла",
+    "before_original_group_count": 37,
+    "after_spring_original_group_count": 37,
+    "spring_draft_count": 2,
+    "autumn_reset_apply_disabled": true,
+    "autumn_original_count": 37,
+    "auth_link": 1,
+    "autumn_valid_after_verify": "Черновик подготовлен\n1 групп · 2 занятий · 1 листов · Осенний 2026/2027\n2\nНовых строк\n37\nИсчезающих строк\n1\nГрупп с данными\nГруппа\tЗаписей\tДобавлено\tИсчезает\n1307\t2\t+2\t−37\nСтруктура проверена. Перед публикацией сравните расписание с подписанным документом.\nПоказать примеры занятий из файла",
+    "autumn_needs_full_replace_confirmation": true,
+    "autumn_ready": true,
+    "download_filename": "KSMU_2026-2027_autumn_group_review.json",
+    "json_period": [
+      "2026-2027",
+      "autumn"
+    ],
+    "errors": [],
+    "no_external_requests": true
+  },
+  {
+    "width": 768,
+    "semester_control_visible": true,
+    "year": "2026-2027",
+    "default_period": "2026-2027:autumn",
+    "no_overflow_import": true,
+    "button_text_alignment": {
+      "display": "inline-flex",
+      "align": "center",
+      "justify": "center"
+    },
+    "errors": [],
+    "no_external_requests": true
+  },
+  {
+    "width": 1280,
+    "semester_control_visible": true,
+    "year": "2026-2027",
+    "default_period": "2026-2027:autumn",
+    "no_overflow_import": true,
+    "button_text_alignment": {
+      "display": "inline-flex",
+      "align": "center",
+      "justify": "center"
+    },
+    "errors": [],
+    "no_external_requests": true
+  }
+]
