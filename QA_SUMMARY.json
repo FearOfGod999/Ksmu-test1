@@ -1,0 +1,40 @@
+{
+  "project": "KSMU Community NOVA Drawer 242",
+  "date": "2026-11-14",
+  "baseline": "NOVA expanded review + full V8.7.1 views",
+  "groups": 242,
+  "data_sha256": "9a9c6b9454efae48dc921401f4dd8bf96e9e4fb7c3c94656eddaa2632767a033",
+  "identical_to_previous_expanded_schedule": true,
+  "checked_viewports": [
+    320,
+    390,
+    768,
+    1280
+  ],
+  "visible_news_on_today": true,
+  "drawer_keyboard_escape_and_overlay": true,
+  "pages_checked": [
+    "Сегодня",
+    "Расписание",
+    "Календарь",
+    "Модули",
+    "Полезное",
+    "Контакты",
+    "Поиск",
+    "Настройки"
+  ],
+  "preview_supabase_disabled": true,
+  "local_hw_save_test": "passed",
+  "local_storage_test": "passed (simulated browser storage due to about:blank sandbox)",
+  "search_test": "passed",
+  "dark_theme_test": "passed",
+  "csv_import_validation": "passed",
+  "production_supabase_test": "not performed",
+  "github_pages_test": "not deployed",
+  "full_browser_run": "Chromium set_content test with linked content inlined only by QA harness",
+  "known_source_caveats": [
+    "Подтверждение циклов секретариатом",
+    "5303и и 8302и: конфликтующие записи",
+    "3401–3404: ошибки внешних Excel-формул"
+  ]
+}
